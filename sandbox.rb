@@ -95,30 +95,41 @@ if input.length == 4
   thousands = 'M' * input[0].to_i
 
 # HUNDREDS
-  if input[1].to_i < 5
+  if input[1].to_i == 4
+    hundreds = 'C' + 'D'
+  elsif input[1].to_i < 5
     hundreds = 'C' * input[1].to_i
   elsif input[1].to_i == 5
     hundreds = 'D'
+  elsif input[1].to_i == 9
+    hundreds = 'C' + 'M'
   elsif input[1].to_i > 5
     hundreds = 'D' + ('C' * (input[1].to_i - 5))
   end
 
 # TENS
-
-  if input[2].to_i < 5
+  if input[2].to_i == 4
+    tens = 'X' + 'L'
+  elsif input[2].to_i < 5
     tens = 'X' * input[2].to_i
   elsif input[2].to_i == 5
     tens = 'L'
+  elsif input[2].to_i == 9
+    tens = 'X' + 'C'
   elsif input[2].to_i > 5
     tens = 'L' + ('X' * (input[2].to_i - 5))
   end
 
 
   # ONES
-  if input[3].to_i < 5
+  if input[3].to_i == 4
+    ones = 'I' + 'V'
+  elsif input[3].to_i < 5
     ones = 'I' * input[3].to_i
   elsif input[3].to_i == 5
     ones = 'V'
+  elsif input[3].to_i == 9
+    ones = 'I' + 'X'
   elsif input[3].to_i > 5
     ones = 'V' + ('I' * (input[3].to_i - 5))
   end
@@ -127,51 +138,70 @@ if input.length == 4
 
 elsif input.length == 3
   # HUNDREDS
-    if input[0].to_i < 5
+    if input[0].to_i == 4
+      hundreds = 'C' + 'D'
+    elsif input[0].to_i < 5
       hundreds = 'C' * input[0].to_i
     elsif input[0].to_i == 5
       hundreds = 'D'
+    elsif input[0].to_i == 9
+      hundreds = 'X' + 'C'
     elsif input[0].to_i > 5
       hundreds = 'D' + ('C' * (input[0].to_i - 5))
     end
 
   # TENS
-
-    if input[1].to_i < 5
+    if input[1].to_i == 4
+      tens = 'I' + 'V'
+    elsif input[1].to_i < 5
       tens = 'X' * input[1].to_i
     elsif input[1].to_i == 5
       tens = 'L'
+    elsif input[1].to_i == 9
+      tens = 'I' + 'X'
     elsif input[1].to_i > 5
       tens = 'L' + ('X' * (input[1].to_i - 5))
     end
 
 
     # ONES
-    if input[2].to_i < 5
+    if input[2].to_i == 4
+      ones = 'I' + 'V'
+    elsif input[2].to_i < 5
       ones = 'I' * input[2].to_i
     elsif input[2].to_i == 5
       ones = 'V'
+    elsif input[2].to_i == 9
+      ones = 'I' + 'X'
     elsif input[2].to_i > 5
       ones = 'V' + ('I' * (input[2].to_i - 5))
     end
 
                               # INPUT LENGTH 2
-                              
+
 elsif input.length == 2
     #tens
-    if input[0].to_i < 5
+    if input[0].to_i == 4
+      tens = 'X' + 'L'
+    elsif input[0].to_i < 5
       tens = 'X' * input[0].to_i
     elsif input[0].to_i == 5
       tens = 'L'
+    elsif input[0].to_i == 9
+      tens = 'I' + 'X'
     elsif input[0].to_i > 5
       tens = 'L' + ('X' * (input[0].to_i - 5))
     end
 
     # ONES
-    if input[1].to_i < 5
+    if input[1].to_i == 4
+      ones = 'I' + 'V'
+    elsif input[1].to_i < 5
       ones = 'I' * input[1].to_i
     elsif input[1].to_i == 5
       ones = 'V'
+    elsif input[1].to_i == 9
+      ones = 'I' + 'X'
     elsif input[1].to_i > 5
       ones = 'V' + ('I' * (input[1].to_i - 5))
     end
@@ -180,10 +210,14 @@ elsif input.length == 2
 
 elsif input.length == 1
     # ONES
-    if input[0].to_i < 5
+    if input[0].to_i == 4
+      ones = 'I' + 'V'
+    elsif input[0].to_i < 5
       ones = 'I' * input[1].to_i
     elsif input[0].to_i == 5
       ones = 'V'
+    elsif input[0].to_i == 9
+      ones = 'I' + 'X'
     elsif input[0].to_i > 5
       ones = 'V' + ('I' * (input[0].to_i - 5))
     end
